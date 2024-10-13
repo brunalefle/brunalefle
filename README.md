@@ -1,4 +1,5 @@
 ### Olá!! Eu sou a Bruna :)
+- 😄 Estudante de Informática Biomédica em UFCSPA
 - 🌱 Estudando Java e C 
 - 😄 Meus pronomes são ela/dela
 ##
