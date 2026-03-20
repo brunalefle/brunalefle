@@ -5,11 +5,11 @@
 Sou estudante de Informática Biomédica na UFCSPA e atuo na interseção entre tecnologia, saúde e dados. Atualmente, sou estagiária na Vigilância Epidemiológica (CEVS/SES/RS), onde desenvolvo automações no Excel Online (Office Scripts / TypeScript) e fluxos no Power Automate, além de trabalhar com qualificação de bases do SINAN, indicadores epidemiológicos e monitoramento de agravos.
 
 Tenho experiência em:
-🧩 Algoritmos e Programação (monitora da disciplina)
-📱 Mobile Learning e Gamificação no ensino de lógica de programação (PID)
-⚙️ Desenvolvimento de sistemas e scripts
-🧪 Análise de dados em saúde e vigilância epidemiológica
-📊 Construção de painéis e automações para otimizar fluxos de trabalho
+- 🧩 Algoritmos e Programação (monitora da disciplina)
+- 📱 Mobile Learning e Gamificação no ensino de lógica de programação (PID)
+- ⚙️ Desenvolvimento de sistemas e scripts
+- 🧪 Análise de dados em saúde e vigilância epidemiológica
+- 📊 Construção de painéis e automações para otimizar fluxos de trabalho
 ##
 <div align="center">
   <a href="https://github.com/brunalefle">
