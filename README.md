@@ -1,7 +1,4 @@
 ### Olá!! Eu sou a Bruna :)
-
-- 😄 Estudante de Informática Biomédica em UFCSPA no 5° semestre
-- 🌱 Estudando Java e C 
 Sou estudante de Informática Biomédica na UFCSPA e atuo na interseção entre tecnologia, saúde e dados. Atualmente, sou estagiária na Vigilância Epidemiológica (CEVS/SES/RS), onde desenvolvo automações no Excel Online (Office Scripts / TypeScript) e fluxos no Power Automate, além de trabalhar com qualificação de bases do SINAN, indicadores epidemiológicos e monitoramento de agravos.
 
 Tenho experiência em:
