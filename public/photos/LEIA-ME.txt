@@ -1,0 +1,20 @@
+Coloque suas 4 fotos nesta pasta com os nomes:
+
+  foto1.jpg  →  foto principal (ocupa mais espaço no grid)
+  foto2.jpg
+  foto3.jpg
+  foto4.jpg
+
+Depois edite o arquivo:
+  src/sections/AlemDaProfissao.jsx
+
+Localize o array `photos` e substitua os `src: null` pelos caminhos:
+
+  const photos = [
+    { src: '/photos/foto1.jpg' },
+    { src: '/photos/foto2.jpg' },
+    { src: '/photos/foto3.jpg' },
+    { src: '/photos/foto4.jpg' },
+  ]
+
+Formatos aceitos: .jpg, .jpeg, .png, .webp

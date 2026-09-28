@@ -1,0 +1,36 @@
+{
+  "name": "brunalefle",
+  "version": "1.0.0",
+  "description": "Sou estudante de Informática Biomédica na UFCSPA e atuo na interseção entre tecnologia, saúde e dados. Atualmente, sou estagiária na Vigilância Epidemiológica (CEVS/SES/RS), onde desenvolvo automações no Excel Online (Office Scripts / TypeScript) e fluxos no Power Automate, além de trabalhar com qualificação de bases do SINAN, indicadores epidemiológicos e monitoramento de agravos.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunalefle/brunalefle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/brunalefle/brunalefle/issues"
+  },
+  "homepage": "https://github.com/brunalefle/brunalefle#readme",
+  "dependencies": {
+    "framer-motion": "^13.4.4",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.1"
+  }
+}

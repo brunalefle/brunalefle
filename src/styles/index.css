@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
+@theme {
+  /* Paleta principal */
+  --color-cream:       #FAF9F6;
+  --color-cream-dark:  #F0EDE6;
+  --color-stone:       #E8E3DA;
+  --color-muted:       #9B9080;
+  --color-ink:         #1C1917;
+  --color-ink-soft:    #44403C;
+
+  /* Acentos */
+  --color-violet:      #6B4FBB;
+  --color-violet-light:#8B6FDB;
+  --color-violet-pale: #EDE8F8;
+  --color-teal:        #2A9D8F;
+  --color-teal-light:  #4AB5A7;
+  --color-teal-pale:   #E4F5F3;
+
+  /* Tipografia */
+  --font-sans:    "DM Sans", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "Fira Code", monospace;
+
+  /* Tamanhos personalizados */
+  --text-display: clamp(2.5rem, 6vw, 4.5rem);
+  --text-hero-sub: clamp(1.1rem, 2.5vw, 1.4rem);
+
+  /* Bordas */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+
+  /* Sombras */
+  --shadow-card: 0 2px 24px 0 rgba(28, 25, 23, 0.07);
+  --shadow-hover: 0 8px 40px 0 rgba(107, 79, 187, 0.15);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+
+  html, body {
+    cursor: url('/star-cursor.svg') 12 2, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M 12 1.5 L 14.82 8.12 L 22 8.76 L 16.56 13.48 L 18.17 20.5 L 12 16.8 L 5.83 20.5 L 7.44 13.48 L 2 8.76 L 9.18 8.12 Z' fill='%236B4FBB' stroke='%23FFFFFF' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 12 2, auto;
+  }
+
+  /* Elementos clicáveis com estrela interativa */
+  a, button, [role="button"], input[type="button"], input[type="submit"], select, summary, .clickable, [style*="cursor: pointer"], [style*="cursor:pointer"] {
+    cursor: url('/star-cursor-pointer.svg') 12 2, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M 12 1.2 L 14.9 8.1 L 22.3 8.7 L 16.7 13.6 L 18.3 20.8 L 12 16.9 L 5.7 20.8 L 7.3 13.6 L 1.7 8.7 L 9.1 8.1 Z' fill='%238B6FDB' stroke='%23FFFFFF' stroke-width='1.4' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23FFFFFF'/%3E%3C/svg%3E") 12 2, pointer !important;
+  }
+
+  ::selection {
+    background-color: var(--color-violet-pale);
+    color: var(--color-violet);
+  }
+
+  /* Links padrão */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Scrollbar sutil */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-stone);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+  }
+}
+
+/* ─── Utilitários customizados ───────────────────────────────────── */
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-display {
+    font-size: var(--text-display);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .text-hero-sub {
+    font-size: var(--text-hero-sub);
+    line-height: 1.5;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .container-narrow {
+    max-width: 68rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-stone);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: var(--color-violet-pale);
+    color: var(--color-violet);
+  }
+
+  .tag-teal {
+    background: var(--color-teal-pale);
+    color: var(--color-teal);
+  }
+
+  .tag-stone {
+    background: var(--color-cream-dark);
+    color: var(--color-ink-soft);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-violet);
+  }
+
+  .divider {
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-violet), var(--color-teal));
+    border-radius: 9999px;
+    margin-top: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ─── Global HUD shimmer (usado no Navbar e nos cards de estudo) ── */
+@keyframes hud-sweep {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(300%);  }
+}
+
+.hud-shimmer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  animation: hud-sweep 1.8s ease-in-out infinite;
+}
+
+/* ─── ViewVerde Layout ─── */
+.viewverde-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 860px) {
+  .viewverde-two-col {
+    grid-template-columns: 1.55fr 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+}
+
+/* Esconde scrollbar do carrossel */
+.viewverde-two-col div::-webkit-scrollbar {
+  display: none;
+}
+
