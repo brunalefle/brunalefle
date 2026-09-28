@@ -103,6 +103,7 @@ export default function Contato({ current, slideIndex = 7 }) {
   const [phase, setPhase] = useState('splash')
   const [charCount, setCharCount] = useState(0)
   const [isGlow, setIsGlow] = useState(false)
+  const [qrMode, setQrMode] = useState('site') // 'site' | 'linkedin'
 
   const isActive = current === slideIndex
 
@@ -434,48 +435,98 @@ export default function Contato({ current, slideIndex = 7 }) {
                 </p>
               </div>
 
-              {/* Base do Lado Esquerdo: QR Code grande do LinkedIn */}
+              {/* Base do Lado Esquerdo: QR Code interativo (Site da Apresentação / LinkedIn) */}
               <div
                 style={{
                   width: '100%',
                   background: '#FFFFFF',
-                  padding: '1.1rem 1rem',
+                  padding: '0.85rem 0.95rem',
                   borderRadius: '1rem',
                   border: '1px solid rgba(107, 79, 187, 0.2)',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '0.65rem',
+                  gap: '0.5rem',
                 }}
               >
+                {/* Abas para alternar o QR Code */}
+                <div style={{ display: 'flex', gap: '0.35rem', width: '100%' }}>
+                  <button
+                    type="button"
+                    onClick={() => setQrMode('site')}
+                    style={{
+                      flex: 1,
+                      padding: '0.22rem 0.35rem',
+                      borderRadius: '999px',
+                      border: qrMode === 'site' ? '1.5px solid var(--color-teal)' : '1px solid var(--color-stone)',
+                      background: qrMode === 'site' ? 'rgba(42,157,143,0.12)' : 'transparent',
+                      color: qrMode === 'site' ? 'var(--color-teal)' : 'var(--color-muted)',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.62rem',
+                      fontWeight: qrMode === 'site' ? 700 : 500,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    🌐 Apresentação
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setQrMode('linkedin')}
+                    style={{
+                      flex: 1,
+                      padding: '0.22rem 0.35rem',
+                      borderRadius: '999px',
+                      border: qrMode === 'linkedin' ? '1.5px solid #2563EB' : '1px solid var(--color-stone)',
+                      background: qrMode === 'linkedin' ? 'rgba(37,99,235,0.1)' : 'transparent',
+                      color: qrMode === 'linkedin' ? '#2563EB' : 'var(--color-muted)',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.62rem',
+                      fontWeight: qrMode === 'linkedin' ? 700 : 500,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    💼 LinkedIn
+                  </button>
+                </div>
+
                 <QRCodeSVG
-                  value="https://www.linkedin.com/in/bruna-lefle"
-                  size={116}
+                  value={qrMode === 'site' ? 'https://brunalefle.github.io' : 'https://www.linkedin.com/in/bruna-lefle'}
+                  size={104}
                   level="M"
                   includeMargin={false}
                   fgColor="#1C1917"
                 />
+
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.15rem' }}>
-                  <span
+                  <a
+                    href={qrMode === 'site' ? 'https://brunalefle.github.io' : 'https://www.linkedin.com/in/bruna-lefle'}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '0.74rem',
-                      color: 'var(--color-ink)',
+                      color: qrMode === 'site' ? 'var(--color-teal)' : '#2563EB',
                       fontWeight: 700,
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.2rem',
                     }}
                   >
-                    vamos conversar?
-                  </span>
+                    {qrMode === 'site' ? 'brunalefle.github.io ↗' : 'in/bruna-lefle ↗'}
+                  </a>
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '0.62rem',
+                      fontSize: '0.6rem',
                       color: 'var(--color-muted)',
                       letterSpacing: '0.02em',
                     }}
                   >
-                    📱 aponte a câmera para conectar
+                    {qrMode === 'site' ? '📱 aponte para abrir os slides' : '📱 aponte para conectar'}
                   </span>
                 </div>
               </div>
@@ -690,6 +741,86 @@ export default function Contato({ current, slideIndex = 7 }) {
                 ))}
               </div>
 
+              {/* Card de Acesso à Apresentação Online */}
+              <motion.a
+                href="https://brunalefle.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.012, y: -1 }}
+                whileTap={{ scale: 0.988 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '0.55rem 0.95rem',
+                  borderRadius: '0.75rem',
+                  background: 'linear-gradient(135deg, rgba(42, 157, 143, 0.08) 0%, rgba(107, 79, 187, 0.08) 100%)',
+                  border: '1.2px solid rgba(42, 157, 143, 0.35)',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 8px rgba(42, 157, 143, 0.06)',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                  <div
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '0.45rem',
+                      background: 'var(--color-teal)',
+                      color: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.9rem',
+                      flexShrink: 0,
+                    }}
+                  >
+                    🌐
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.58rem',
+                        color: 'var(--color-teal)',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                      }}
+                    >
+                      Acesse esta apresentação online
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.85rem',
+                        fontWeight: 800,
+                        color: 'var(--color-ink)',
+                      }}
+                    >
+                      brunalefle.github.io
+                    </div>
+                  </div>
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.68rem',
+                    color: 'var(--color-teal)',
+                    fontWeight: 700,
+                    background: '#FFFFFF',
+                    padding: '0.22rem 0.6rem',
+                    borderRadius: '999px',
+                    border: '1px solid rgba(42, 157, 143, 0.3)',
+                    flexShrink: 0,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  abrir site ↗
+                </span>
+              </motion.a>
+
               {/* Call-to-action final: Acelera AI / Grupo Panvel */}
               <motion.div
                 whileHover={{ y: -1.5 }}
@@ -747,11 +878,11 @@ export default function Contato({ current, slideIndex = 7 }) {
             </div>
           </div>
 
-          {/* Footer discreto */}
+          {/* Footer discreto com link para a apresentação online */}
           <div
             style={{
-              marginTop: '1.25rem',
-              paddingTop: '0.65rem',
+              marginTop: '1.1rem',
+              paddingTop: '0.55rem',
               borderTop: '1px solid var(--color-stone)',
               display: 'flex',
               justifyContent: 'space-between',
@@ -760,6 +891,23 @@ export default function Contato({ current, slideIndex = 7 }) {
               gap: '0.5rem',
             }}
           >
+            <a
+              href="https://brunalefle.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.68rem',
+                color: 'var(--color-teal)',
+                fontWeight: 600,
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+              }}
+            >
+              <span>🌐</span> Apresentação online: <strong>brunalefle.github.io</strong> ↗
+            </a>
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -767,16 +915,7 @@ export default function Contato({ current, slideIndex = 7 }) {
                 color: 'var(--color-muted)',
               }}
             >
-              bruna.lefle · 2026
-            </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.66rem',
-                color: 'var(--color-muted)',
-              }}
-            >
-              Acelera AI · Grupo Panvel
+              Acelera AI · Grupo Panvel · 2026
             </span>
           </div>
         </motion.div>
