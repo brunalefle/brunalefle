@@ -36,7 +36,7 @@ const TreeIcon = ({ size = 28 }) => (
 )
 
 // Print da planilha de indicadores
-const CEVS_PRINT = '/photos/cevs-indicadores.png'
+const CEVS_PRINT = `${import.meta.env.BASE_URL}photos/cevs-indicadores.png`
 
 export default function PorQueIA() {
   const [lightbox, setLightbox] = useState(false)

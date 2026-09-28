@@ -2,13 +2,15 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ScrollReveal'
 
+const BASE = import.meta.env.BASE_URL
+
 const slides = [
-  { id: 'cidadao', src: '/photos/viewverde/viewverde-institucional.png', alt: 'Portal Cidadão ViewVerde', chip: 'Portal Cidadão', chipColor: '#0D9488' },
-  { id: 'gestao', src: '/photos/viewverde/dashboard.png', alt: 'Painel de Gestão ViewVerde', chip: 'Painel Gestão', chipColor: '#6B4FBB' },
-  { id: 'arborizacao', src: '/photos/viewverde/mapa-arvores.png', alt: 'Mapa de Arborização Urbana', chip: 'Georreferenciamento', chipColor: '#0D9488' },
-  { id: 'importacao', src: '/photos/viewverde/importacao.png', alt: 'Importação em Lote', chip: 'XLSX / CSV', chipColor: '#D97706' },
-  { id: 'dashboards', src: '/photos/viewverde/dashboard.png', alt: 'Dashboards IQA em Tempo Real', chip: 'IQA em Tempo Real', chipColor: '#0284C7' },
-  { id: 'relatorios', src: '/photos/viewverde/relatorios.png', alt: 'Área de Relatórios PDF e Excel', chip: 'PDF & Excel', chipColor: '#6B4FBB' },
+  { id: 'cidadao', src: `${BASE}photos/viewverde/viewverde-institucional.png`, alt: 'Portal Cidadão ViewVerde', chip: 'Portal Cidadão', chipColor: '#0D9488' },
+  { id: 'gestao', src: `${BASE}photos/viewverde/dashboard.png`, alt: 'Painel de Gestão ViewVerde', chip: 'Painel Gestão', chipColor: '#6B4FBB' },
+  { id: 'arborizacao', src: `${BASE}photos/viewverde/mapa-arvores.png`, alt: 'Mapa de Arborização Urbana', chip: 'Georreferenciamento', chipColor: '#0D9488' },
+  { id: 'importacao', src: `${BASE}photos/viewverde/importacao.png`, alt: 'Importação em Lote', chip: 'XLSX / CSV', chipColor: '#D97706' },
+  { id: 'dashboards', src: `${BASE}photos/viewverde/dashboard.png`, alt: 'Dashboards IQA em Tempo Real', chip: 'IQA em Tempo Real', chipColor: '#0284C7' },
+  { id: 'relatorios', src: `${BASE}photos/viewverde/relatorios.png`, alt: 'Área de Relatórios PDF e Excel', chip: 'PDF & Excel', chipColor: '#6B4FBB' },
 ]
 
 const stackGroups = [

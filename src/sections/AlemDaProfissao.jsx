@@ -4,16 +4,18 @@ import { motion } from 'framer-motion'
 import { fadeUp } from '../utils/motion'
 
 // ─── CONFIGURAÇÃO DE FOTOS ──────────────────────────────────────────
+const BASE = import.meta.env.BASE_URL
+
 // Retrato principal
 const RETRATO_TOPO = {
-  src: '/photos/foto2.jpg', // ou '/photos/foto1.jpg'
+  src: `${BASE}photos/foto2.jpg`,
   alt: 'Bruna Caroline Sirtuli Lefle',
 }
 
 // Foto jogando / setup
 const FOTO_JOGANDO = {
   id: 'jogando',
-  src: '/photos/jogando.png',
+  src: `${BASE}photos/jogando.png`,
   alt: 'Bruna jogando',
   tag: 'jogando',
   icon: '🎮',
@@ -21,37 +23,37 @@ const FOTO_JOGANDO = {
 
 // 3 fotos de performance de dança
 const fotosDanca = [
-  { id: 'danca-1', src: '/photos/foto-danca-1.jpg', alt: 'Performance de dança' },
-  { id: 'danca-2', src: '/photos/foto-danca-2.jpg', alt: 'Performance de dança' },
-  { id: 'danca-3', src: '/photos/foto-danca-3.jpg', alt: 'Performance de dança' },
+  { id: 'danca-1', src: `${BASE}photos/foto-danca-1.jpg`, alt: 'Performance de dança' },
+  { id: 'danca-2', src: `${BASE}photos/foto-danca-2.jpg`, alt: 'Performance de dança' },
+  { id: 'danca-3', src: `${BASE}photos/foto-danca-3.jpg`, alt: 'Performance de dança' },
 ]
 
 // Fotos dos animais de estimação
 const fotosPets = [
   {
     id: 'pet-gaia-garrincha',
-    src: '/photos/gaia_e_garrincha.jpg',
+    src: `${BASE}photos/gaia_e_garrincha.jpg`,
     alt: 'Gaia e Garrincha',
     tag: 'gaia & garrincha',
     icon: '🐾',
   },
   {
     id: 'pet-brida',
-    src: '/photos/brida.jpg',
+    src: `${BASE}photos/brida.jpg`,
     alt: 'Brida',
     tag: 'brida',
     icon: '🐾',
   },
   {
     id: 'pet-madonna',
-    src: '/photos/madonna.jpg',
+    src: `${BASE}photos/madonna.jpg`,
     alt: 'Madonna',
     tag: 'madonna',
     icon: '🐾',
   },
   {
     id: 'pet-gaia',
-    src: '/photos/gaia.PNG',
+    src: `${BASE}photos/gaia.PNG`,
     alt: 'Gaia',
     tag: 'gaia',
     icon: '🐾',

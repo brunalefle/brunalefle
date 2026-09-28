@@ -395,7 +395,7 @@ export default function Contato({ current, slideIndex = 7 }) {
                   }}
                 >
                   <img
-                    src="/photos/foto1.jpg"
+                    src={`${import.meta.env.BASE_URL}photos/foto1.jpg`}
                     alt="Bruna Caroline Sirtuli Lefle"
                     style={{
                       width: '100%',
@@ -404,7 +404,7 @@ export default function Contato({ current, slideIndex = 7 }) {
                       objectPosition: 'center 15%',
                     }}
                     onError={(e) => {
-                      e.currentTarget.src = '/photos/foto2.jpg'
+                      e.currentTarget.src = `${import.meta.env.BASE_URL}photos/foto2.jpg`
                     }}
                   />
                 </div>
